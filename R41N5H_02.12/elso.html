@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Parancsok</title>
+</head>
+<body>
+
+    <h1>GitHub Parancsok</h1>
+
+    <h2>Local Parancsok</h2>
+    <pre>
+        <code>
+            git init                  # Kezdeti Git inicializálás a helyi repository létrehozásához
+            git add <filename>       # Állomány hozzáadása a staging area-hoz
+            git commit -m "Message"  # Staging area tartalmának commitolása
+            git status               # Repository állapotának ellenőrzése
+            git log                  # Commitok naplózása
+        </code>
+    </pre>
+
+    <h2>Remote Parancsok</h2>
+    <pre>
+        <code>
+            git remote add origin <repository-url>  # Távoli repository hozzáadása
+            git push -u origin master               # Lokális változások feltöltése a távoli repository-ba
+            git pull origin master                  # Távoli változások letöltése a lokális repository-ba
+        </code>
+    </pre>
+
+</body>
+</html>
