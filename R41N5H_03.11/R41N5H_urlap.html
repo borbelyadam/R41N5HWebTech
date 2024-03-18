@@ -3,15 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Űrlap</title>
+    <title>Űrlap-R41N5H</title>
   </head>
   <body>
     <header>
-      <h1>Űrlap címe</h1>
+      <h1>HTML5 űrlap - R41N5H</h1>
     </header>
+<style>
 
+  .fejlec{
+    font-size: 18pt;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .urlap{
+    padding: 30px;
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ccffff;
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px;
+  }
+
+  .lablec{
+    width: 500px;
+    font-size: 10px;
+    margin-top: 40px;
+    border-top: 3px double;
+    padding-top: 30px;
+    text-align: right;
+  }
+</style>
     <section>
-      <form id="myForm">
+      <form id="myForm" class="urlap">
         <label for="name" class="input-field"
           >Név:
           <input
@@ -23,6 +52,7 @@
             autocomplete="off"
             placeholder="Írja be a nevét"
         /></label>
+        <br><br>
         <label for="pin" class="input-field"
           >Pin kód:
           <input
@@ -33,20 +63,24 @@
             pattern="\d{4}"
             placeholder="4 számjegyű PIN"
         /></label>
-
-        <label for="fruit" class="input-field"
-          >Kedvenc gyümölcs: <input list="fruits" name="fruit" id="fruit" />
-          <datalist id="fruits">
-            <option value="Alma 250Ft/kg"></option>
-            <option value="Banán 350Ft/kg"></option>
-            <option value="Citrom 450Ft/kg"></option>
+        <br><br>
+        <label for="gyumolcs" class="input-field"
+          >Kedvenc gyümölcs: <input list="gyumolcsok" name="gyumolcs" id="gyumolcs"/>
+          <datalist id="gyumolcsok">
+            <option value="Alma"></option>
+            <option value="Banán"></option>
+            <option value="Citrom"></option>
+            <option value="Dinnye">Görögdinnye</option>
+            <option value="Dinnye">Sárgadinnye</option>
+            <option value="Eper"></option>
           </datalist>
         </label>
-
+        <br><br>
         <label for="age" class="input-field"
           >Életkor:
           <input type="number" id="age" name="age" min="1" max="100" step="1"
         /></label>
+        <br><br>
         <label for="shoeSize" class="input-field"
           >Lábméret:
           <input
@@ -57,26 +91,49 @@
             max="50"
             step="0.5"
         /></label>
-        <label for="confidence" class="input-field"
+        <br><br>
+        <label for="onbizalom" class="input-field"
           >Önbizalom:
           <input
             type="range"
-            id="confidence"
-            name="confidence"
+            id="onbizalom"
+            name="onbizalom"
             min="0"
             max="100"
             class="range-slider"
+            width="300px"
         /></label>
+        <br><br>
       </form>
     </section>
 
-    <button form="myForm" type="submit">Elküld</button>
+    <!--<input type="submit" value="ELKÜLDÖM" form="urlap" formaction="feldolgozo.php" formethod="POST" />-->
+    <button form="myForm" type="submit">Elküldés</button>
     <button form="myForm" type="button" onclick="submitWithoutValidation()">
-      Elküld ellenőrzés nélkül
+      Elküldés ellenőrzés nélkül
     </button>
 
-    <footer>
-      <p>Források</p>
+    <footer id="lablec" class="lablec">
+      Forrás:
+      <a href="https://html5doctor.com/html5-forms-introduction-and-new-attributes/"
+      target="ujablak">
+      https://html5doctor.com/html5-forms-introduction-and-new-attributes/
+    </a>
+
+    <br><br>
+
+    Formátumok:
+    <a href="https://www.html5pattern.com/"
+    target="ujablak">
+    https://www.html5pattern.com/
+    </a>
+  
+    <br><br>
+
+    JavaScript REGEXP:
+    <a href=""
+    target="ujablak">
+    </a>
     </footer>
 
     <script>
