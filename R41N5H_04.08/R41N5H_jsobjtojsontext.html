@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS objektumot konvertálja JSON Text</title>
+</head>
+<body>
+  <script>
+
+    const adatok = {
+      név: "Borbély Ádám",
+      irányítószám: "3515",
+      város: "Miskolc",
+      egyetem: "Miskolci Egyetem"
+    };
+
+    const jsonText = JSON.stringify(adatok);
+
+    document.write(`<pre>${jsonText}</pre>`);
+  </script>
+</body>
+</html>
+
+ 

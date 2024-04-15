@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tömbökön belüli tömbök ciklusa!</title>
+</head>
+<body>
+  <h1>Autók adatai</h1>
+  <ul id="carList"></ul>
+
+  <script>
+
+    const carsData = {
+      "autók": [
+        {
+            "név": "BMW",
+            "modellek": ["X5", "X3", "X1"]
+        },
+        {
+            "név": "Audi",
+            "modellek": ["A4", "A6", "Q5"]
+        },
+        {
+            "név": "Mercedes",
+            "modellek": ["C-Class", "E-Class", "S-Class"]
+        },
+        {
+            "név": "Peugeot",
+            "modellek": ["206", "307", "Partner"]
+        }
+      ]
+    };
+
+    const carList = document.getElementById('carList');
+
+    carsData.autók.forEach(car => {
+      const listItem = document.createElement('li');
+      const carName = document.createElement('h3');
+      carName.textContent = car.név;
+      listItem.appendChild(carName);
+
+      const modelList = document.createElement('ul');
+      car.modellek.forEach(model => {
+        const modelItem = document.createElement('li');
+        modelItem.textContent = model;
+        modelList.appendChild(modelItem);
+      });
+
+      listItem.appendChild(modelList);
+      carList.appendChild(listItem);
+    });
+  </script>
+</body>
+</html>

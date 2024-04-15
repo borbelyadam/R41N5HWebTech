@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Text konvertálása JavaScript objektummá</title>
+</head>
+<body>
+  <script>
+    const jsonText = `{
+      "név": "Borbély Ádám",
+      "irányítószám": "3515",
+      "város": "Miskolc",
+      "egyetem": "Miskolci Egyetem"
+    }`;
+
+    const objektum = JSON.parse(jsonText);
+
+    console.log(objektum);
+
+    const név = objektum.név;
+    const irányítószám = objektum['irányítószám'];
+    const város = objektum.város;
+    const egyetem = objektum.egyetem;
+
+    document.write(`<p>Név: ${név}</p>`);
+    document.write(`<p>Irányítószám: ${irányítószám}</p>`);
+    document.write(`<p>Város: ${város}</p>`);
+    document.write(`<p>Egyetem: ${egyetem}</p>`);
+  </script>
+</body>
+</html>

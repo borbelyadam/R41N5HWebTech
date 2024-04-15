@@ -1,0 +1,15 @@
+{
+    "books": [
+      {
+        "author": "Nyékyné Dr. Gaizler Judit",
+        "title": "Java 2 I-II. - Útikalauz programozóknak 5.0",
+        "year": 2009
+      },
+      {
+        "author": "Reiter István",
+        "title": "C# programozás lépésről lépésre",
+        "year": 2018
+      }
+    ]
+  }
+  
