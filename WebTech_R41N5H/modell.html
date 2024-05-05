@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelljeink</title>
+    <link rel="stylesheet" href="style.css"> <!-- A fő CSS fájl importálása -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome ikonok stílusainak importálása -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- jQuery importálása -->
+    <style>
+        section {
+            border: 1px solid #ddd; /* Szegély */
+            border-radius: 10px; /* Kerekített szélek */
+            padding: 20px;
+            margin-bottom: 20px; /* Alsó távolság a szekciók között */
+            display: none; /* Kezdetben rejtve */
+            color: #444; /* Szöveg színe */
+            background-color: #f9f9f9; /* Háttérszín */
+        }
+
+        section h3 {
+            font-size: 24px;
+            margin-bottom: 10px; /* Alsó távolság a címet követő szöveghez */
+        }
+
+        .model-info i {
+            color: #007bff; /* Az ikon színe */
+            margin-right: 10px; /* Jobbra távolság a szövegtől */
+        }
+
+        .model-info p {
+            margin: 5px 0; /* Belso margó a bekezdések között */
+        }
+
+        .centered-text {
+            text-align: center;
+            margin-bottom: 20px; /* Alsó távolság a section-októl */
+        }
+        .export-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .export-button:hover {
+            background-color: #0056b3;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        header img {
+            position: absolute;
+            left: 5%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Modelljeink</h1>
+    <img src="image.png" alt="Logo">
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Főoldal</a></li>
+        <li><a href="modell.html">Modelljeink</a></li>
+        <li><a href="carorder.html">Autorendelés</a></li>
+        <li><a href="services.html">Szolgáltatások</a></li>
+        <li><a href="contact.html">Kapcsolat</a></li>
+    </ul>
+</nav>
+
+
+<article>
+    <section>
+        <div class="model">
+            <h3>Peugeot 208</h3>
+            <div class="model-info">
+            <p><i class="fas fa-motorcycle"></i><strong>Motor:</strong> 1.2 PureTech benzines</p>
+            <p><i class="fas fa-tachometer-alt"></i><strong>Lóerő:</strong> 82 HP</p>
+            <p><i class="fas fa-gas-pump"></i><strong>Fogyasztás:</strong> 5.0 l/100km</p>
+            <p><i class="fas fa-euro-sign"></i><strong>Ár:</strong> 4,500,000 Ft-tól</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="model">
+            <h3>Peugeot 308</h3>
+            <div class="model-info">
+            <p><i class="fas fa-motorcycle"></i><strong>Motor:</strong> 1.6 BlueHDi dízel</p>
+            <p><i class="fas fa-tachometer-alt"></i><strong>Lóerő:</strong> 120 HP</p>
+            <p><i class="fas fa-gas-pump"></i><strong>Fogyasztás:</strong> 4.0 l/100km</p>
+            <p><i class="fas fa-euro-sign"></i><strong>Ár:</strong> 6,200,000 Ft-tól</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="model">
+            <h3>Peugeot 2008</h3>
+            <div class="model-info">
+            <p><i class="fas fa-motorcycle"></i><strong>Motor:</strong> 1.2 PureTech benzines</p>
+            <p><i class="fas fa-tachometer-alt"></i><strong>Lóerő:</strong> 110 HP</p>
+            <p><i class="fas fa-gas-pump"></i><strong>Fogyasztás:</strong> 5.5 l/100km</p>
+            <p><i class="fas fa-euro-sign"></i><strong>Ár:</strong> 5,800,000 Ft-tól</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="model">
+            <h3>Peugeot 3008</h3>
+            <div class="model-info">
+            <p><i class="fas fa-motorcycle"></i><strong>Motor:</strong> 1.5 BlueHDi dízel</p>
+            <p><i class="fas fa-tachometer-alt"></i><strong>Lóerő:</strong> 130 HP</p>
+            <p><i class="fas fa-gas-pump"></i><strong>Fogyasztás:</strong> 4.2 l/100km</p>
+            <p><i class="fas fa-euro-sign"></i><strong>Ár:</strong> 7,500,000 Ft-tól</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="model">
+            <h3>Peugeot 5008</h3>
+            <div class="model-info">
+            <p><i class="fas fa-motorcycle"></i><strong>Motor:</strong> 1.6 PureTech benzines</p>
+            <p><i class="fas fa-tachometer-alt"></i><strong>Lóerő:</strong> 150 HP</p>
+            <p><i class="fas fa-gas-pump"></i><strong>Fogyasztás:</strong> 6.0 l/100km</p>
+            <p><i class="fas fa-euro-sign"></i><strong>Ár:</strong> 8,200,000 Ft-tól</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- További modellek hozzáadása itt -->
+    <button id="exportButton" class="export-button"><i class="fas fa-file-export"></i> Exportálás JSON formátumban</button>
+    <button id="popupButton" class="export-button">További információ</button>
+
+    <!-- Felugró ablak (modal) -->
+    <div id="myModal" class="modal">
+    <!-- A modal tartalma -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="popupContent">
+            <!-- Ide kerülnek a JSON adatok -->
+        </div>
+    </div>
+</div>
+</article>
+
+<footer>
+    <p>&copy; 2024 Peugeot. Minden jog fenntartva.</p>
+</footer>
+
+
+
+<script>
+ // jQuery animáció az elemek megjelenítésére
+ $(document).ready(function() {
+    $("section").fadeIn(1000); // 1 másodperc alatt jelennek meg
+});
+
+$(document).ready(function() {
+    // Az exportálás gombra kattintáskor futtatott függvény
+    $("#exportButton").click(function() {
+        // Gyűjtsük össze az összes modell adatait
+        var models = [];
+        $("section").each(function() {
+            var model = {};
+            model.name = $(this).find("h3").text();
+            model.details = [];
+            $(this).find(".model-info p").each(function() {
+                model.details.push($(this).text());
+            });
+            models.push(model);
+        });
+
+        // Konvertáljuk a modell adatokat JSON formátumba
+        var jsonData = JSON.stringify(models, null, 2);
+
+        // Exportáljuk a JSON adatokat fájlba
+        var blob = new Blob([jsonData], {type: "application/json"});
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'models.json';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }, 0);
+    });
+});
+
+$(document).ready(function() {
+    // Megjelenítjük a felugró ablakot, ha a felhasználó rákattint a gombra
+    $('#popupButton').click(function() {
+        $('#myModal').css('display', 'block');
+        // AJAX kérés az adatok betöltésére
+        $.ajax({
+            url: 'models.json', // Az AJAX kérés URL-je, itt állítsd be a JSON fájl elérési útvonalát
+            dataType: 'json', // Várt adattípus: JSON
+            success: function(data) { // Sikeres válasz esetén
+                // Feltöltjük a JSON tartalmát a megfelelő HTML elembe
+                var content = '<ul>';
+                $.each(data, function(index, model) {
+                    content += '<li>' + model.name + ': ';
+                    if (model.details.length > 0) {
+                        content += '<ul>';
+                        $.each(model.details, function(i, detail) {
+                            content += '<li>' + detail + '</li>';
+                        });
+                        content += '</ul>';
+                    } else {
+                        content += 'Nincsenek részletek';
+                    }
+                    content += '</li>';
+                });
+                content += '</ul>';
+                $('#popupContent').html(content);
+            }
+            ,
+            error: function(xhr, status, error) { // Hiba esetén
+                console.error(status + ': ' + error); // Hibaüzenet kiírása a konzolra
+                $('#popupContent').html('<p>Hiba történt a JSON betöltésekor.</p>'); // Hibajelzés megjelenítése
+            }
+        });
+    });
+
+    // Bezárjuk a felugró ablakot, ha a felhasználó rákattint a bezárás ikonra vagy a háttérre
+    $('.close').click(function() {
+        $('#myModal').css('display', 'none');
+    });
+    $(window).click(function(event) {
+        if (event.target == $('#myModal')[0]) {
+            $('#myModal').css('display', 'none');
+        }
+    });
+});
+</script>
+
+</body>
+</html>

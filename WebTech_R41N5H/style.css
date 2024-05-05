@@ -1,0 +1,77 @@
+/* style.css */
+nav {
+    background-color: #222; /* Sötét szürke */
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px; /* Kisebb belső tér a gombok között */
+    border-radius: 5px; /* Kerekített szélek */
+    transition: background-color 0.3s; /* Animáció a hover effekthez */
+}
+
+nav ul li a:hover {
+    background-color: #333; /* Sötétebb háttérszín a hover állapotban */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1E3A5E; /* Peugeot acélkék */
+    color: #E1E1E6; /* Szövegszín */
+}
+header, footer {
+    background-color: #001D48; /* Sötétebb árnyalatú kék */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+section, aside {
+    padding: 20px;
+    margin: 10px;
+    background-color: #333; /* Sötét szürke */
+}
+article {
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #fff; /* Fehér */
+    color: #000; /* Fekete */
+    padding: 20px;
+}
+header img {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+    background-color: #001D48
+}
+
+header {
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header img {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 40px;
+}

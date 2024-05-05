@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peugeot Weboldal</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS stílusokat itt lehet definiálni */
+       
+        .video-container {
+            text-align: center;
+        }
+        #video-controls {
+            margin-top: 10px;
+        }
+        .video-controls-button {
+            background-color: #4CAF50; /* Zöld */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+        .video-controls-button:hover {
+            background-color: #45a049; /* Sötétebb árnyalatú zöld */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Peugeot</h1>
+    <img src="image.png" alt="Logo" class="box">
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#">Főoldal</a></li>
+        <li><a href="modell.html">Modelljeink</a></li>
+        <li><a href="carorder.html">Autorendelés</a></li>
+        <li><a href="services.html">Szolgáltatások</a></li>
+        <li><a href="contact.html">Kapcsolat</a></li>
+    </ul>
+</nav>
+
+<div class="video-container">
+    <video id="video-player" width="1024" height="768" controls autoplay=1>
+        <source src="Peugeot.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div id="video-controls">
+        <button class="video-controls-button" onclick="playPause()">Lejátszás/Megállítás</button>
+        <button class="video-controls-button" onclick="skip(10)">Előre 10 másodperc</button>
+        <button class="video-controls-button" onclick="skip(-10)">Vissza 10 másodperc</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Peugeot. Minden jog fenntartva.</p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    // jQuery animáció az iframe megjelenítésére
+    $(document).ready(function() {
+        $(".video-container").slideDown(1000); // 1 másodperc alatt gördül le
+    });
+    var video = document.getElementById("video-player");
+
+    function playPause() {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    }
+
+    function skip(time) {
+        video.currentTime += time;
+    }
+
+    $(document).ready(function() {
+        // Elem animálása osztály alapján
+        $(".box").click(function() {
+            $(this).animate({opacity: 0.5}, 1000); // 1000 ms (1 másodperc) alatt animálja az átlátszóságot
+        });
+    });
+</script>
+
+</body>
+</html>

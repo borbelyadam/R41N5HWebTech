@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autó kérése</title>
+    <link rel="stylesheet" href="style.css"> <!-- A fő CSS fájl importálása -->
+    <style>
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        form input[type="text"],
+        form input[type="color"],
+        form select,
+        form textarea {
+            width: calc(50% - 15px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            display: inline-block;
+            vertical-align: middle;
+            transition: border-color 0.3s ease;
+        }
+
+        form input[type="checkbox"],
+        form input[type="radio"] {
+            display: inline-block;
+            width: auto;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        form .error {
+            border-color: red;
+        }
+
+        form .error-message {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f00;
+            color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            display: none;
+            transition: opacity 0.3s ease;
+        }
+
+        form .error-message.active {
+            display: block;
+        }
+
+        form button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #555;
+        }
+        input{
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Rendelés</h1>
+        <img src="image.png" alt="Logo">
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="modell.html">Modelljeink</a></li>
+            <li><a href="carorder.html">Autorendelés</a></li>
+            <li><a href="services.html">Szolgáltatások</a></li>
+            <li><a href="contact.html">Kapcsolat</a></li>
+        </ul>
+    </nav>
+
+    <form id="carRequestForm">
+        <div class="error-message" id="errorMessage"></div>
+        <label for="nameInput">Név:</label>
+        <input type="text" id="nameInput" name="name" required>
+    
+        <label for="commentInput">Megjegyzés:</label>
+        <textarea id="commentInput" name="comment" rows="4" cols="50"></textarea>
+    
+        <label for="carModelInput">Autó modell:</label>
+        <input list="carModels" id="carModelInput" name="carModel" required>
+        <datalist id="carModels">
+            <option value="Peugeot 208">
+            <option value="Peugeot 308">
+            <option value="Peugeot 2008">
+            <option value="Peugeot 3008">
+            <option value="Peugeot 5008">
+        </datalist>
+    
+        <label>Fizetési mód:</label>
+        <label for="paymentCash">Készpénz</label>
+        <input type="radio" id="paymentCash" name="payment" value="cash" required>
+        
+        <label for="paymentCard">Bankkártya</label>
+        <input type="radio" id="paymentCard" name="payment" value="card" required>
+
+    
+    
+        <label for="colorInput">Autó színe:</label>
+        <input type="color" id="colorInput" name="color">
+    
+        <label for="dateInput">Kézbesítés dátuma:</label>
+        <input type="date" id="dateInput" name="deliveryDate" required>
+    
+        <label for="newsletterInput">Hírlevél feliratkozás</label>
+        <input type="checkbox" id="newsletterInput" name="newsletter">
+        
+
+    <button type="submit">Kérelem elküldése</button>
+    <button type="reset">Alaphelyzet</button><br>
+
+    <label for="optionsList">Opciók:</label><br>
+    <select id="optionsList" name="options" size="3">
+        <option value="option1">Alapfelszereltség</option>
+        <option value="option2">Középszintű felszereltség</option>
+        <option value="option3">Full extrás felszereltség</option>
+    </select>
+</form>
+
+<footer>
+    <p>&copy; 2024 Peugeot. Minden jog fenntartva.</p>
+</footer>
+<script>
+    const form = document.getElementById("carRequestForm");
+    const errorMessage = document.getElementById("errorMessage");
+
+    form.addEventListener("submit", function(event) {
+        const nameInput = document.getElementById("nameInput");
+        const carModelInput = document.getElementById("carModelInput");
+        const paymentCash = document.getElementById("paymentCash");
+        const paymentCard = document.getElementById("paymentCard");
+        const dateInput = document.getElementById("dateInput");
+
+        const errors = [];
+
+        if (!nameInput.value.trim()) {
+            errors.push("Név mező kitöltése kötelező.");
+            nameInput.classList.add("error");
+        } else {
+            nameInput.classList.remove("error");
+        }
+
+        if (!carModelInput.value.trim()) {
+            errors.push("Autó modell választása kötelező.");
+            carModelInput.classList.add("error");
+        } else {
+            carModelInput.classList.remove("error");
+        }
+
+        if (!paymentCash.checked && !paymentCard.checked) {
+            errors.push("Fizetési mód választása kötelező.");
+        }
+
+        if (!dateInput.value) {
+            errors.push("Kézbesítés dátumának megadása kötelező.");
+            dateInput.classList.add("error");
+        } else {
+            dateInput.classList.remove("error");
+        }
+
+        if (errors.length > 0) {
+            event.preventDefault();
+            errorMessage.textContent = errors.join("\n");
+            errorMessage.classList.add("active");
+        } else {
+            errorMessage.textContent = "";
+            errorMessage.classList.remove("active");
+        }
+    });
+    document.getElementById('carRequestForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Az alapértelmezett űrlap elküldésének megakadályozása
+
+        // Űrlapadatok lekérése
+        var formData = new FormData(this);
+        
+        // Autó kérés elküldése (itt lehetne az AJAX kérés)
+        console.log("Autó kérés elküldve:");
+        for (var pair of formData.entries()) {
+            console.log(pair[0] + ': ' + pair[1]);
+        }
+        alert("Autó rendelés elküldve:");
+    });
+</script>
+
+</body>
+</html>

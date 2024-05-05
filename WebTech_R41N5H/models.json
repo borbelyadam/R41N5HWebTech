@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Peugeot 208",
+    "details": [
+      "Motor: 1.2 PureTech benzines",
+      "Lóerő: 82 HP",
+      "Fogyasztás: 5.0 l/100km",
+      "Ár: 4,500,000 Ft-tól"
+    ]
+  },
+  {
+    "name": "Peugeot 308",
+    "details": [
+      "Motor: 1.6 BlueHDi dízel",
+      "Lóerő: 120 HP",
+      "Fogyasztás: 4.0 l/100km",
+      "Ár: 6,200,000 Ft-tól"
+    ]
+  },
+  {
+    "name": "Peugeot 2008",
+    "details": [
+      "Motor: 1.2 PureTech benzines",
+      "Lóerő: 110 HP",
+      "Fogyasztás: 5.5 l/100km",
+      "Ár: 5,800,000 Ft-tól"
+    ]
+  },
+  {
+    "name": "Peugeot 3008",
+    "details": [
+      "Motor: 1.5 BlueHDi dízel",
+      "Lóerő: 130 HP",
+      "Fogyasztás: 4.2 l/100km",
+      "Ár: 7,500,000 Ft-tól"
+    ]
+  },
+  {
+    "name": "Peugeot 5008",
+    "details": [
+      "Motor: 1.6 PureTech benzines",
+      "Lóerő: 150 HP",
+      "Fogyasztás: 6.0 l/100km",
+      "Ár: 8,200,000 Ft-tól"
+    ]
+  }
+]

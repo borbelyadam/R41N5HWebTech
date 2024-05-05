@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcsolat</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        footer {
+            background-color: #001D48; /* Sötétebb árnyalatú kék */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        header img {
+            position: absolute;
+            left: 5%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Kapcsolat</h1>
+        <img src="image.png" alt="Logo">
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="modell.html">Modelljeink</a></li>
+            <li><a href="carorder.html">Autorendelés</a></li>
+            <li><a href="services.html">Szolgáltatások</a></li>
+            <li><a href="contact.html">Kapcsolat</a></li>
+        </ul>
+    </nav>
+
+<div class="container">
+    <h2>Írj nekünk!</h2>
+    <form id="contactForm">
+        <label for="nameInput">Név:</label>
+        <input type="text" id="nameInput" name="name" required>
+
+        <label for="emailInput">E-mail cím:</label>
+        <input type="text" id="emailInput" name="email" required>
+
+        <label for="messageTextarea">Üzenet:</label>
+        <textarea id="messageTextarea" name="message" rows="6" required></textarea>
+
+        <button type="submit">Küldés</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Peugeot. Minden jog fenntartva.</p>
+</footer>
+
+</body>
+</html>
